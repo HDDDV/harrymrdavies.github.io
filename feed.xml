@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Harry M. R. Davies</title>
+  <subtitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</subtitle>
+  <link href="https://harrymrdavies.com/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://harrymrdavies.com/" rel="alternate" type="text/html"/>
+  <updated>2026-06-01T00:00:00Z</updated>
+  <id>https://harrymrdavies.com/</id>
+  <author>
+    <name>Harry M. R. Davies</name>
+    <email>me@harrymrdavies.com</email>
+    <uri>https://harrymrdavies.com/</uri>
+  </author>
+  <rights>© 2026 Harry M. R. Davies. All rights reserved.</rights>
+  <icon>https://harrymrdavies.com/favicons/favicon.svg</icon>
+  <logo>https://harrymrdavies.com/assets/og-image.png</logo>
+  <generator uri="https://harrymrdavies.com/">harrymrdavies.com</generator>
+
+  <entry>
+    <title>Lorem Ipsum Dolor Sit Amet</title>
+    <link href="https://harrymrdavies.com/writing/lorem-ipsum-dolor/" rel="alternate" type="text/html"/>
+    <id>https://harrymrdavies.com/writing/lorem-ipsum-dolor/</id>
+    <published>2026-06-01T00:00:00Z</published>
+    <updated>2026-06-01T00:00:00Z</updated>
+    <summary>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</summary>
+  </entry>
+
+  <entry>
+    <title>Consectetur Adipiscing Elit</title>
+    <link href="https://harrymrdavies.com/writing/consectetur-adipiscing/" rel="alternate" type="text/html"/>
+    <id>https://harrymrdavies.com/writing/consectetur-adipiscing/</id>
+    <published>2026-05-01T00:00:00Z</published>
+    <updated>2026-05-01T00:00:00Z</updated>
+    <summary>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</summary>
+  </entry>
+
+  <entry>
+    <title>Sed Do Eiusmod Tempor</title>
+    <link href="https://harrymrdavies.com/writing/sed-do-eiusmod/" rel="alternate" type="text/html"/>
+    <id>https://harrymrdavies.com/writing/sed-do-eiusmod/</id>
+    <published>2026-04-01T00:00:00Z</published>
+    <updated>2026-04-01T00:00:00Z</updated>
+    <summary>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</summary>
+  </entry>
+</feed>

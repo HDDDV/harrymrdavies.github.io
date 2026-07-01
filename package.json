@@ -1,0 +1,16 @@
+{
+  "name": "harrymrdavies.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Harry M. R. Davies — personal site.",
+  "scripts": {
+    "build": "babel . --out-dir . --presets=@babel/preset-react --only='*.jsx' --extensions='.jsx' --out-file-extension=.js && node tools/bundle.cjs",
+    "build:favicons": "node tools/generate-favicons.cjs",
+    "build:og": "rsvg-convert -w 1200 -h 630 assets/og-image.svg -o assets/og-image.png && (pngquant --quality=75-95 --strip --force --output assets/og-image.png assets/og-image.png || true)"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.0",
+    "@babel/core": "^7.25.0",
+    "@babel/preset-react": "^7.25.0"
+  }
+}

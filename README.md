@@ -2,7 +2,7 @@
 
 Personal site for [harrymrdavies.com](https://harrymrdavies.com) — an editorial, newspaper-style portfolio rendered with React, deployed via GitHub Pages.
 
-> **Status: placeholder build.** Copy is Lorem Ipsum and the design/art are stand-ins. The *structure* and *SEO infrastructure* are production-shaped and ready to be restyled and rewritten. See **Placeholders to replace** below.
+> **Status: real homepage copy, placeholder art + links.** The homepage copy is Harry's; the portrait, favicons and OG image are stand-ins, and a couple of links are placeholders. See **Placeholders to replace** below. The `writing/` pages are still Lorem Ipsum scaffold.
 
 ## Stack
 
@@ -29,7 +29,7 @@ index.html                  Entry point + meta tags + JSON-LD + static SEO fallb
 site.css                    All styles, including @font-face declarations
 *.jsx / *.js                React components (source + compiled; only bundle.js ships)
 portfolio-app.jsx           Top-level composition
-site-content.jsx            Runner, Hero, Ticker, About, Career, Projects, Services, Writing, Contact
+site-content.jsx            Runner, Hero, About, Services, Projects, Career, Writing, Beyond, Contact
 assets/
   fonts/                    Self-hosted woff2 fonts
   portrait-placeholder.*    Hero portrait stand-in (replace with a real photo)
@@ -43,10 +43,9 @@ writing/                    Writing hub + per-article pages (full per-article SE
 
 ## Placeholders to replace
 
-- **Copy** — all body text is Lorem Ipsum across `index.html`, `site-content.jsx`, and `writing/`.
-- **Identity** — social handles in `humans.txt`, `index.html` (Contact + JSON-LD), and `writing/` use placeholder URLs (`/in/harrymrdavies`, `@harrymrdavies`, `github.com/harrymrdavies`). Swap for real handles.
-- **Art** — `favicons/favicon.svg` (H monogram), `assets/portrait-placeholder.*`, and `assets/og-image.svg` are stand-ins. Replace the SVGs and re-run `npm run build:favicons` / `npm run build:og`.
-- **Dates / sitemap / feed** — `sitemap.xml` and `feed.xml` carry placeholder dates; update when real content lands.
+- **Links** — `BOOK_URL` (`https://cal.com/harrymrdavies`, currently 404s) and `SUBSCRIBE_URL` in `site-content.jsx` are placeholders; swap for Harry's real scheduling and newsletter links before sharing the site widely. (LinkedIn + YouTube are live.)
+- **Art** — `favicons/favicon.svg` (H monogram) and `assets/og-image.svg` are stand-ins. The hero + OG image use Harry's real photo (`assets/portrait.png`). Replace the monogram SVG and re-run `npm run build:favicons` if desired.
+- **Writing** — `writing/` (hub + 3 articles) is still Lorem Ipsum scaffold: `noindex`ed and excluded from `sitemap.xml`, so it won't be indexed. `feed.xml` still lists the placeholder entries. Populate or delete when ready.
 
 ## Deployment
 

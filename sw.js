@@ -8,7 +8,7 @@
 // Bump CACHE_VERSION to force-evict everything on a deploy that
 // breaks compatibility.
 
-const CACHE_VERSION = 'hd-v1';
+const CACHE_VERSION = 'hd-v2';
 const PRECACHE = [
   '/',
   '/index.html',
@@ -21,7 +21,7 @@ const PRECACHE = [
   '/assets/fonts/inter-latin.woff2',
   '/assets/fonts/jetbrains-mono-latin.woff2',
   '/assets/og-image.png',
-  '/assets/portrait-placeholder.png',
+  '/assets/portrait.png',
   '/favicons/favicon.svg',
   '/writing/',
 ];

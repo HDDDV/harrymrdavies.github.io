@@ -1,10 +1,9 @@
 /* TEAM */
 
-Harry M. R. Davies
+Harry M. R. Davies — exited founder, investor & advisor
 Site: https://harrymrdavies.com
-LinkedIn: https://www.linkedin.com/in/harrymrdavies/
-Twitter: https://x.com/harrymrdavies
-GitHub: https://github.com/harrymrdavies
+LinkedIn: https://www.linkedin.com/in/harry-davies93/
+YouTube: https://youtube.com/@harrymrdavies
 
 /* SITE */
 

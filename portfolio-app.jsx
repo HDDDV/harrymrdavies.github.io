@@ -8,10 +8,11 @@ function App() {
       <main id="main-content">
         <Hero />
         <About />
-        <Career />
-        <Projects />
         <Services />
+        <Projects />
+        <Career />
         <Writing />
+        <Beyond />
         <Contact />
       </main>
     </React.Fragment>

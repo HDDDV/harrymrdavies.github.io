@@ -3,19 +3,22 @@
 /* ── site-content.js ────────────────────────────────────────── */
 // Section components for the portfolio site.
 // All static markup — JSX is just for componentisation.
-// Copy is Lorem Ipsum placeholder; swap freely.
+
+// External links. BOOK_URL and SUBSCRIBE_URL are placeholders — swap for the real ones.
+const BOOK_URL = 'https://cal.com/harrymrdavies';
+const SUBSCRIBE_URL = 'https://harrymrdavies.com/#subscribe';
+const YOUTUBE_URL = 'https://youtube.com/@harrymrdavies';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/harry-davies93/';
 
 // ─────────────────────────────────────────────────────────
 // Header (fixed running banner)
 // ─────────────────────────────────────────────────────────
-// Placeholder scheduling link — swap for Harry's real Calendly / cal.com / Google.
-const BOOK_URL = 'https://cal.com/harrymrdavies';
 function Runner() {
   const [active, setActive] = React.useState('hero');
   const [open, setOpen] = React.useState(false);
   React.useEffect(() => {
     function onScroll() {
-      const sections = ['hero', 'about', 'career', 'projects', 'services', 'writing', 'contact'];
+      const sections = ['hero', 'about', 'services', 'projects', 'career', 'writing', 'beyond', 'contact'];
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
         if (el && el.getBoundingClientRect().top < 120) {
@@ -30,7 +33,7 @@ function Runner() {
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  const links = [['about', 'About'], ['career', 'Career'], ['projects', 'Work'], ['writing', 'Writing'], ['contact', 'Contact']];
+  const links = [['about', 'About'], ['services', 'Work with me'], ['projects', 'Work'], ['writing', 'Content'], ['contact', 'Contact']];
   return /*#__PURE__*/React.createElement("header", {
     className: "runner"
   }, /*#__PURE__*/React.createElement("div", {
@@ -79,7 +82,7 @@ function Runner() {
 }
 
 // ─────────────────────────────────────────────────────────
-// Hero — masthead + portrait (placeholder photo)
+// Hero — masthead + portrait
 // ─────────────────────────────────────────────────────────
 function Hero() {
   return /*#__PURE__*/React.createElement("section", {
@@ -92,11 +95,11 @@ function Hero() {
     className: "hero-copy"
   }, /*#__PURE__*/React.createElement("p", {
     className: "eyebrow"
-  }, "Sales \xB7 Marketing \xB7 Growth"), /*#__PURE__*/React.createElement("h1", {
+  }, "Founder \xB7 Investor \xB7 Advisor"), /*#__PURE__*/React.createElement("h1", {
     className: "hero-title"
-  }, "The work of ", /*#__PURE__*/React.createElement("em", null, "lorem ipsum"), " dolor sit amet."), /*#__PURE__*/React.createElement("p", {
+  }, "Helping businesses put ", /*#__PURE__*/React.createElement("em", null, "AI to work"), "."), /*#__PURE__*/React.createElement("p", {
     className: "hero-lede"
-  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."), /*#__PURE__*/React.createElement("div", {
+  }, "Hey, I'm Harry \u2014 an exited founder, community builder, investor and advisor. Now I help businesses implement AI to increase efficiency and profitability."), /*#__PURE__*/React.createElement("div", {
     className: "hero-actions"
   }, /*#__PURE__*/React.createElement("a", {
     className: "btn btn-primary",
@@ -105,20 +108,22 @@ function Hero() {
     rel: "noreferrer"
   }, "Book a call \u2192"), /*#__PURE__*/React.createElement("a", {
     className: "btn btn-ghost",
-    href: "#writing"
-  }, "Read the writing"))), /*#__PURE__*/React.createElement("div", {
+    href: YOUTUBE_URL,
+    target: "_blank",
+    rel: "noreferrer"
+  }, "Watch on YouTube"))), /*#__PURE__*/React.createElement("div", {
     className: "hero-photo"
   }, /*#__PURE__*/React.createElement("div", {
     className: "hero-photo-frame"
   }, /*#__PURE__*/React.createElement("img", {
-    src: "assets/portrait-placeholder.png",
-    alt: "Portrait of Harry M. R. Davies (placeholder)",
+    src: "assets/portrait.png",
+    alt: "Harry M. R. Davies",
     width: "800",
-    height: "1000",
+    height: "800",
     fetchpriority: "high"
   }), /*#__PURE__*/React.createElement("span", {
     className: "hero-photo-tag"
-  }, "Sales \xB7 Marketing \xB7 Growth")))));
+  }, "AI \xB7 Advisory \xB7 Community")))));
 }
 
 // ─────────────────────────────────────────────────────────
@@ -137,9 +142,9 @@ function About() {
     className: "eyebrow"
   }, "About"), /*#__PURE__*/React.createElement("h2", {
     className: "ttl"
-  }, /*#__PURE__*/React.createElement("em", null, "Lorem ipsum dolor"), /*#__PURE__*/React.createElement("br", null), "sit amet consectetur."))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("em", null, "From building companies"), /*#__PURE__*/React.createElement("br", null), "to putting AI to work."))), /*#__PURE__*/React.createElement("div", {
     className: "body about-lede drop"
-  }, /*#__PURE__*/React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."), /*#__PURE__*/React.createElement("p", null, "Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.")), /*#__PURE__*/React.createElement("hr", {
+  }, /*#__PURE__*/React.createElement("p", null, "Hey, I'm Harry. Over the past decade I've built companies across tech, services and communities \u2014 as a founder, operator, investor and advisor. I co-founded a technology recruitment company, scaled it past seven figures, and exited."), /*#__PURE__*/React.createElement("p", null, "Today I help businesses implement AI to increase efficiency and profitability \u2014 from hands-on setup to strategy \u2014 and I advise founders across Web3, fintech, recruitment, wellness and AI on operations, fundraising, go-to-market, sales and marketing.")), /*#__PURE__*/React.createElement("hr", {
     className: "hairline",
     style: {
       margin: '64px 0'
@@ -150,15 +155,15 @@ function About() {
     className: "kicker"
   }, "01"), /*#__PURE__*/React.createElement("h3", {
     className: "subhead"
-  }, "Lorem ", /*#__PURE__*/React.createElement("em", null, "Ipsum")), /*#__PURE__*/React.createElement("p", null, "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.")), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
+  }, "AI ", /*#__PURE__*/React.createElement("em", null, "Implementation")), /*#__PURE__*/React.createElement("p", null, "Helping businesses adopt AI to increase efficiency and profitability \u2014 practical setup, workflows and training. I also lead roundtables with private-equity funds on rolling AI out across their fund and portfolio companies.")), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
     className: "kicker"
   }, "02"), /*#__PURE__*/React.createElement("h3", {
     className: "subhead"
-  }, "Dolor & ", /*#__PURE__*/React.createElement("em", null, "Sit Amet")), /*#__PURE__*/React.createElement("p", null, "Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.")), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("em", null, "Advisory")), /*#__PURE__*/React.createElement("p", null, "Advising founders across Web3, fintech, recruitment, wellness and AI \u2014 from operational setup and fundraising strategy to go-to-market, sales and marketing.")), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
     className: "kicker"
   }, "03"), /*#__PURE__*/React.createElement("h3", {
     className: "subhead"
-  }, "Consectetur ", /*#__PURE__*/React.createElement("em", null, "Elit")), /*#__PURE__*/React.createElement("p", null, "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam."))), /*#__PURE__*/React.createElement("hr", {
+  }, /*#__PURE__*/React.createElement("em", null, "Community")), /*#__PURE__*/React.createElement("p", null, "Built a community of 11,000+ investors, founders and senior operators across the UK, US and Europe, with partnerships spanning some of the largest companies in the world."))), /*#__PURE__*/React.createElement("hr", {
     className: "hairline",
     style: {
       margin: '64px 0 32px'
@@ -171,63 +176,172 @@ function About() {
     className: "achievement-list"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
     className: "ach-num"
-  }, "01"), /*#__PURE__*/React.createElement("span", null, "Lorem ipsum dolor sit amet ", /*#__PURE__*/React.createElement("em", null, "consectetur adipiscing"), " elit sed do eiusmod.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+  }, "01"), /*#__PURE__*/React.createElement("span", null, "Co-founded and scaled a technology recruitment company to ", /*#__PURE__*/React.createElement("em", null, "seven figures"), ", then exited \u2014 working with Barclays, LSEG, BP, Moneybox, Tide, Curve, Wintermute and GSR.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
     className: "ach-num"
-  }, "02"), /*#__PURE__*/React.createElement("span", null, "Tempor incididunt ut labore et ", /*#__PURE__*/React.createElement("em", null, "dolore magna"), " aliqua ut enim.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+  }, "02"), /*#__PURE__*/React.createElement("span", null, "Built a community of ", /*#__PURE__*/React.createElement("em", null, "11,000+"), " VC/PE investors, founders and senior operators across the UK, US and Europe.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
     className: "ach-num"
-  }, "03"), /*#__PURE__*/React.createElement("span", null, "Ad minim veniam quis nostrud ", /*#__PURE__*/React.createElement("em", null, "exercitation ullamco"), " laboris nisi.")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
+  }, "03"), /*#__PURE__*/React.createElement("span", null, "Built partnerships with some of the largest companies on the planet \u2014 ", /*#__PURE__*/React.createElement("em", null, "Google, Microsoft, AWS, Hubspot and Revolut"), ".")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("span", {
     className: "ach-num"
-  }, "04"), /*#__PURE__*/React.createElement("span", null, "Ut aliquip ex ea commodo consequat ", /*#__PURE__*/React.createElement("em", null, "duis aute"), " irure dolor."))))));
+  }, "04"), /*#__PURE__*/React.createElement("span", null, "Guest speaker and advisor to ", /*#__PURE__*/React.createElement("em", null, "Kickstart Global"), ", the UK's largest cross-university incubator \u2014 100+ startups launched, \xA333m+ raised."))))));
 }
 
 // ─────────────────────────────────────────────────────────
-// Career — chronological timeline
+// Services — how I can help + subscribe callout
 // ─────────────────────────────────────────────────────────
-const CAREER = [{
-  period: '2025 –',
-  org: 'Lorem Company',
-  role: 'Founder & Operator',
-  note: 'Consectetur adipiscing elit'
-}, {
-  period: '2024 – 2025',
-  org: 'Ipsum Labs',
-  role: 'Head of Product',
-  note: 'Sed do eiusmod tempor'
-}, {
-  period: '2023 – 2024',
-  org: 'Dolor Systems',
-  role: 'Engineering Lead',
-  note: 'Incididunt ut labore'
-}, {
-  period: '2021 – 2023',
-  org: 'Amet Technologies',
-  role: 'Senior Engineer',
-  note: 'Et dolore magna aliqua'
-}, {
-  period: '2018 – 2021',
-  org: 'Consectetur Corp',
-  role: 'Software Engineer',
-  note: 'Ut enim ad minim veniam'
-}, {
-  period: '—',
-  org: 'University of Lorem',
-  role: 'BSc, Computer Science',
-  note: 'Quis nostrud exercitation'
-}];
-function Career() {
+function Services() {
   return /*#__PURE__*/React.createElement("section", {
-    id: "career",
-    className: "career-section",
-    "data-screen-label": "03 Career"
+    id: "services",
+    className: "services-section",
+    "data-screen-label": "03 Work with me"
   }, /*#__PURE__*/React.createElement("div", {
     className: "wrap"
   }, /*#__PURE__*/React.createElement("div", {
     className: "section-head"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
     className: "eyebrow"
-  }, "Career"), /*#__PURE__*/React.createElement("h2", {
+  }, "Work with me"), /*#__PURE__*/React.createElement("h2", {
     className: "ttl"
-  }, "A ", /*#__PURE__*/React.createElement("em", null, "decade"), " in brief."))), /*#__PURE__*/React.createElement("ol", {
+  }, "How I can ", /*#__PURE__*/React.createElement("em", null, "help"), "."))), /*#__PURE__*/React.createElement("div", {
+    className: "services-grid"
+  }, /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
+    className: "kicker"
+  }, "01"), /*#__PURE__*/React.createElement("h3", {
+    className: "subhead"
+  }, "AI ", /*#__PURE__*/React.createElement("em", null, "Implementation")), /*#__PURE__*/React.createElement("ul", {
+    className: "bare-list"
+  }, /*#__PURE__*/React.createElement("li", null, "Put AI to work across your business"), /*#__PURE__*/React.createElement("li", null, "Practical setup & workflow design"), /*#__PURE__*/React.createElement("li", null, "Team training & enablement"), /*#__PURE__*/React.createElement("li", null, "PE-fund AI-adoption roundtables"))), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
+    className: "kicker"
+  }, "02"), /*#__PURE__*/React.createElement("h3", {
+    className: "subhead"
+  }, /*#__PURE__*/React.createElement("em", null, "Advisory")), /*#__PURE__*/React.createElement("ul", {
+    className: "bare-list"
+  }, /*#__PURE__*/React.createElement("li", null, "Operational setup & scaling"), /*#__PURE__*/React.createElement("li", null, "Fundraising strategy"), /*#__PURE__*/React.createElement("li", null, "Go-to-market & sales"), /*#__PURE__*/React.createElement("li", null, "Marketing & positioning"))), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
+    className: "kicker"
+  }, "03"), /*#__PURE__*/React.createElement("h3", {
+    className: "subhead"
+  }, "Partnerships & ", /*#__PURE__*/React.createElement("em", null, "Community")), /*#__PURE__*/React.createElement("ul", {
+    className: "bare-list"
+  }, /*#__PURE__*/React.createElement("li", null, "Access to 11,000+ investors & operators"), /*#__PURE__*/React.createElement("li", null, "Enterprise partnership building"), /*#__PURE__*/React.createElement("li", null, "Curated events & introductions"), /*#__PURE__*/React.createElement("li", null, "Go-to-market through community")))), /*#__PURE__*/React.createElement("div", {
+    className: "dd-callout"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kicker"
+  }, "Free guide"), /*#__PURE__*/React.createElement("h3", {
+    className: "subhead"
+  }, "Subscribe for a ", /*#__PURE__*/React.createElement("em", null, "free Claude Cowork setup guide")), /*#__PURE__*/React.createElement("p", null, "Get free, practical AI content \u2014 plus a step-by-step Claude Cowork setup guide \u2014 straight to your inbox."), /*#__PURE__*/React.createElement("a", {
+    className: "link-arrow",
+    href: SUBSCRIBE_URL
+  }, "Subscribe \u2192"))));
+}
+
+// ─────────────────────────────────────────────────────────
+// Selected work
+// ─────────────────────────────────────────────────────────
+const PROJECTS = [{
+  name: 'Gathr',
+  role: 'Head of Partnerships / Investor / Advisor',
+  period: 'Dec 2023 –',
+  body: 'A curated community of 11,000+ founders, investors and operators. I invested first, then joined the founder after exiting my recruitment company to build the business from scratch. Built and monetised relationships across 2,000 VC and growth investors (850 funds) and 2,000 private-equity investors (450 funds), and secured partnerships with AWS, Stripe, Airwallex, Hubspot and Revolut. Helped design the recruitment-comparison product that matches investment-backed companies to search firms on actual placement data.',
+  pills: ['Partnerships', 'Community', 'Investors', 'Events']
+}, {
+  name: 'Albert Bow',
+  role: 'Co-Founder',
+  period: '2018 – 2023',
+  body: 'Co-founded and bootstrapped a technology recruitment agency specialising in Tech, Trading, Product and C-suite hiring. Scaled past seven figures and exited. Developed deep market knowledge of digital assets, trading and blockchain through senior and C-suite placements with the likes of Wintermute, GSR, Tide, Curve and Moneybox.',
+  pills: ['Recruitment', 'Digital Assets', 'C-suite', 'Exited']
+}, {
+  name: 'Vestn.io & Levitate',
+  role: 'Investor & Advisor',
+  period: '2021 –',
+  body: 'Angel investor and advisor across early-stage tech, helping startups scale efficiently, raise capital and improve profitability. Advisor to Vestn.io, a real-world-asset (RWA) tokenisation platform, and to Levitate, a digital design and branding agency.',
+  pills: ['Advisory', 'Tokenisation', 'RWA', 'Branding']
+}, {
+  name: 'HippoConsent',
+  role: 'Founder',
+  period: '2020 – 2023',
+  body: 'Founded a digital medical-consent platform for surgical preparation and aftercare, used by clinicians and patients. Now on the backburner.',
+  pills: ['HealthTech', 'Product']
+}];
+function Projects() {
+  return /*#__PURE__*/React.createElement("section", {
+    id: "projects",
+    className: "projects-section",
+    "data-screen-label": "04 Work"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    className: "eyebrow"
+  }, "Selected work"), /*#__PURE__*/React.createElement("h2", {
+    className: "ttl"
+  }, "Things I've ", /*#__PURE__*/React.createElement("em", null, "built.")))), /*#__PURE__*/React.createElement("div", {
+    className: "list-divided"
+  }, PROJECTS.map((p, i) => /*#__PURE__*/React.createElement("article", {
+    key: i,
+    className: "project"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "project-meta"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kicker"
+  }, String(i + 1).padStart(2, '0')), /*#__PURE__*/React.createElement("div", {
+    className: "meta"
+  }, p.period)), /*#__PURE__*/React.createElement("div", {
+    className: "project-body"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "subhead"
+  }, p.name, /*#__PURE__*/React.createElement("span", {
+    className: "project-role"
+  }, " \xB7 ", p.role)), /*#__PURE__*/React.createElement("p", null, p.body), /*#__PURE__*/React.createElement("div", {
+    className: "project-pills"
+  }, p.pills.map((t, j) => /*#__PURE__*/React.createElement("span", {
+    key: j,
+    className: "pill"
+  }, t)))))))));
+}
+
+// ─────────────────────────────────────────────────────────
+// Experience — chronological timeline
+// ─────────────────────────────────────────────────────────
+const CAREER = [{
+  period: 'Dec 2023 –',
+  org: 'Gathr',
+  role: 'Head of Partnerships / Investor / Advisor',
+  note: 'Community of 11,000+ founders, investors & operators'
+}, {
+  period: '2018 – 2023',
+  org: 'Albert Bow',
+  role: 'Co-Founder',
+  note: 'Bootstrapped tech recruitment agency · exited'
+}, {
+  period: '2021 –',
+  org: 'Vestn.io / Levitate',
+  role: 'Investor & Advisor',
+  note: 'Angel investing & startup advisory'
+}, {
+  period: '2020 – 2023',
+  org: 'HippoConsent',
+  role: 'Founder',
+  note: 'Digital medical-consent platform'
+}, {
+  period: '2016 – 2018',
+  org: 'Twenty Recruitment Group',
+  role: 'Head of Development & Vendor Technology',
+  note: 'Development & vendor-technology initiatives'
+}];
+function Career() {
+  return /*#__PURE__*/React.createElement("section", {
+    id: "career",
+    className: "career-section",
+    "data-screen-label": "05 Experience"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    className: "eyebrow"
+  }, "Experience"), /*#__PURE__*/React.createElement("h2", {
+    className: "ttl"
+  }, "A ", /*#__PURE__*/React.createElement("em", null, "decade"), " of building."))), /*#__PURE__*/React.createElement("ol", {
     className: "career-list list-divided"
   }, CAREER.map((c, i) => /*#__PURE__*/React.createElement("li", {
     key: i,
@@ -246,209 +360,49 @@ function Career() {
 }
 
 // ─────────────────────────────────────────────────────────
-// Projects
+// Content & speaking
 // ─────────────────────────────────────────────────────────
-const PROJECTS = [{
-  num: '04.i',
-  name: 'Lorem Project',
-  role: 'Founder & Operator',
-  period: '2025 –',
-  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  pills: ['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet'],
-  url: 'https://example.com/'
-}, {
-  num: '04.ii',
-  name: 'Ipsum Platform',
-  role: 'Engineering Lead',
-  period: '2024 – 2025',
-  body: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.',
-  pills: ['Consectetur', 'Adipiscing', 'Elit'],
-  url: 'https://example.com/'
-}, {
-  num: '04.iii',
-  name: 'Dolor Engine',
-  role: 'Senior Engineer',
-  period: '2023 – 2024',
-  body: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
-  pills: ['Tempor', 'Incididunt', 'Labore']
-}, {
-  num: '04.iv',
-  name: 'Amet Toolkit',
-  role: 'Maintainer',
-  period: '2022 – 2023',
-  body: 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.',
-  pills: ['Magna', 'Aliqua', 'Veniam']
-}];
-function Projects() {
-  return /*#__PURE__*/React.createElement("section", {
-    id: "projects",
-    className: "projects-section",
-    "data-screen-label": "04 Projects"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "wrap"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "section-head"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
-    className: "eyebrow"
-  }, "Selected work"), /*#__PURE__*/React.createElement("h2", {
-    className: "ttl"
-  }, "Selected ", /*#__PURE__*/React.createElement("em", null, "work.")))), /*#__PURE__*/React.createElement("div", {
-    className: "list-divided"
-  }, PROJECTS.map((p, i) => /*#__PURE__*/React.createElement("article", {
-    key: i,
-    className: "project"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "project-meta"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "kicker"
-  }, String(i + 1).padStart(2, '0')), /*#__PURE__*/React.createElement("div", {
-    className: "meta"
-  }, p.period)), /*#__PURE__*/React.createElement("div", {
-    className: "project-body"
-  }, /*#__PURE__*/React.createElement("h3", {
-    className: "subhead"
-  }, p.name, /*#__PURE__*/React.createElement("span", {
-    className: "project-role"
-  }, " \xB7 ", p.role)), /*#__PURE__*/React.createElement("p", null, p.body), p.url && /*#__PURE__*/React.createElement("p", {
-    style: {
-      marginTop: 16
-    }
-  }, /*#__PURE__*/React.createElement("a", {
-    className: "link-arrow",
-    href: p.url,
-    target: "_blank",
-    rel: "noreferrer"
-  }, p.url.replace(/^https?:\/\//, '').replace(/\/$/, ''), " \u2192")), /*#__PURE__*/React.createElement("div", {
-    className: "project-pills"
-  }, p.pills.map((t, j) => /*#__PURE__*/React.createElement("span", {
-    key: j,
-    className: "pill"
-  }, t)))))))));
-}
-
-// ─────────────────────────────────────────────────────────
-// Services
-// ─────────────────────────────────────────────────────────
-function Services() {
-  return /*#__PURE__*/React.createElement("section", {
-    id: "services",
-    className: "services-section",
-    "data-screen-label": "05 Services"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "wrap"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "section-head"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
-    className: "eyebrow"
-  }, "Services"), /*#__PURE__*/React.createElement("h2", {
-    className: "ttl"
-  }, "Lorem ipsum ", /*#__PURE__*/React.createElement("em", null, "dolor"), " sit amet."))), /*#__PURE__*/React.createElement("div", {
-    className: "services-grid"
-  }, /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
-    className: "kicker"
-  }, "01"), /*#__PURE__*/React.createElement("h3", {
-    className: "subhead"
-  }, "Lorem & ", /*#__PURE__*/React.createElement("em", null, "Ipsum"), /*#__PURE__*/React.createElement("br", null), "Advisory"), /*#__PURE__*/React.createElement("ul", {
-    className: "bare-list"
-  }, /*#__PURE__*/React.createElement("li", null, "Lorem ipsum dolor sit"), /*#__PURE__*/React.createElement("li", null, "Consectetur adipiscing elit"), /*#__PURE__*/React.createElement("li", null, "Sed do eiusmod tempor"), /*#__PURE__*/React.createElement("li", null, "Incididunt ut labore"))), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
-    className: "kicker"
-  }, "02"), /*#__PURE__*/React.createElement("h3", {
-    className: "subhead"
-  }, "Dolor & ", /*#__PURE__*/React.createElement("em", null, "Sit Amet"), /*#__PURE__*/React.createElement("br", null), "Strategy"), /*#__PURE__*/React.createElement("ul", {
-    className: "bare-list"
-  }, /*#__PURE__*/React.createElement("li", null, "Et dolore magna aliqua"), /*#__PURE__*/React.createElement("li", null, "Ut enim ad minim veniam"), /*#__PURE__*/React.createElement("li", null, "Quis nostrud exercitation"), /*#__PURE__*/React.createElement("li", null, "Ullamco laboris nisi"))), /*#__PURE__*/React.createElement("article", null, /*#__PURE__*/React.createElement("div", {
-    className: "kicker"
-  }, "03"), /*#__PURE__*/React.createElement("h3", {
-    className: "subhead"
-  }, "Consectetur & ", /*#__PURE__*/React.createElement("em", null, "Adipiscing")), /*#__PURE__*/React.createElement("ul", {
-    className: "bare-list"
-  }, /*#__PURE__*/React.createElement("li", null, "Ut aliquip ex ea commodo"), /*#__PURE__*/React.createElement("li", null, "Duis aute irure dolor"), /*#__PURE__*/React.createElement("li", null, "In reprehenderit voluptate"), /*#__PURE__*/React.createElement("li", null, "Velit esse cillum dolore")))), /*#__PURE__*/React.createElement("div", {
-    className: "dd-callout"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "kicker"
-  }, "A note"), /*#__PURE__*/React.createElement("h3", {
-    className: "subhead"
-  }, "Lorem ipsum \u2014 ", /*#__PURE__*/React.createElement("em", null, "dolor"), " sit amet"), /*#__PURE__*/React.createElement("p", null, "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis."), /*#__PURE__*/React.createElement("a", {
-    className: "link-arrow",
-    href: "https://example.com",
-    target: "_blank",
-    rel: "noreferrer"
-  }, "example.com \u2192"))));
-}
-
-// ─────────────────────────────────────────────────────────
-// Writing & Speaking
-// ─────────────────────────────────────────────────────────
-const ARTICLES = [{
-  date: 'Jun 2026',
-  title: 'Lorem Ipsum Dolor Sit Amet',
-  excerpt: 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  url: '/writing/lorem-ipsum-dolor/'
-}, {
-  date: 'May 2026',
-  title: 'Consectetur Adipiscing Elit',
-  excerpt: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.',
-  url: '/writing/consectetur-adipiscing/'
-}, {
-  date: 'Apr 2026',
-  title: 'Sed Do Eiusmod Tempor',
-  excerpt: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-  url: '/writing/sed-do-eiusmod/'
-}];
 const SPEAKING = [{
-  event: 'Lorem Conference',
-  topic: 'Dolor Sit Amet &amp; Strategy'
+  event: 'Kickstart Global',
+  topic: 'Guest speaker &amp; advisor · UK\'s largest cross-university incubator'
 }, {
-  event: 'Ipsum Summit',
-  topic: 'Consectetur Adipiscing Elit'
+  event: 'Private-equity roundtables',
+  topic: 'Leading AI-adoption roundtables for PE funds &amp; portfolio companies'
 }];
 function Writing() {
   return /*#__PURE__*/React.createElement("section", {
     id: "writing",
     className: "writing-section",
-    "data-screen-label": "06 Writing"
+    "data-screen-label": "06 Content"
   }, /*#__PURE__*/React.createElement("div", {
     className: "wrap"
   }, /*#__PURE__*/React.createElement("div", {
     className: "section-head"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
     className: "eyebrow"
-  }, "Writing & speaking"), /*#__PURE__*/React.createElement("h2", {
+  }, "Content & speaking"), /*#__PURE__*/React.createElement("h2", {
     className: "ttl"
-  }, "In ", /*#__PURE__*/React.createElement("em", null, "print"), " and at the lectern."))), /*#__PURE__*/React.createElement("div", {
+  }, "Teaching AI ", /*#__PURE__*/React.createElement("em", null, "in public.")))), /*#__PURE__*/React.createElement("div", {
     className: "writing-grid"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "kicker",
-    style: {
-      marginBottom: 24
-    }
-  }, "Recent articles"), /*#__PURE__*/React.createElement("div", {
-    className: "list-divided"
-  }, ARTICLES.map((a, i) => /*#__PURE__*/React.createElement("a", {
-    key: i,
-    className: "article-link",
-    href: a.url
+    className: "youtube-feature"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "meta"
-  }, a.date), /*#__PURE__*/React.createElement("h3", {
-    className: "subhead",
-    dangerouslySetInnerHTML: {
-      __html: a.title
-    }
-  }), /*#__PURE__*/React.createElement("p", {
-    dangerouslySetInnerHTML: {
-      __html: a.excerpt
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "link-arrow"
-  }, "Read \u2192")))), /*#__PURE__*/React.createElement("p", {
-    style: {
-      marginTop: 32
-    }
+    className: "kicker"
+  }, "YouTube \xB7 @harrymrdavies"), /*#__PURE__*/React.createElement("h3", {
+    className: "subhead"
+  }, "Free AI education, ", /*#__PURE__*/React.createElement("em", null, "every week.")), /*#__PURE__*/React.createElement("p", null, "I share practical, no-fluff AI content to help businesses and founders get more done \u2014 and get your hands on a free Claude Cowork setup guide when you subscribe."), /*#__PURE__*/React.createElement("div", {
+    className: "youtube-actions"
   }, /*#__PURE__*/React.createElement("a", {
-    className: "link-arrow",
-    href: "/writing/"
-  }, "All writing \u2192"))), /*#__PURE__*/React.createElement("aside", {
+    className: "btn btn-primary",
+    href: YOUTUBE_URL,
+    target: "_blank",
+    rel: "noreferrer"
+  }, "Watch on YouTube \u2192"), /*#__PURE__*/React.createElement("a", {
+    className: "btn btn-ghost",
+    href: LINKEDIN_URL,
+    target: "_blank",
+    rel: "noreferrer"
+  }, "21,000+ on LinkedIn")))), /*#__PURE__*/React.createElement("aside", {
     className: "speaking"
   }, /*#__PURE__*/React.createElement("div", {
     className: "kicker",
@@ -461,7 +415,7 @@ function Writing() {
   }, /*#__PURE__*/React.createElement("h4", {
     className: "subhead",
     style: {
-      fontSize: '24px'
+      fontSize: '22px'
     }
   }, s.event), /*#__PURE__*/React.createElement("div", {
     className: "meta",
@@ -484,7 +438,51 @@ function Writing() {
       fontStyle: 'italic',
       fontSize: '20px'
     }
-  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.")))));
+  }, "Talks and roundtables on implementing AI in business, community-building and going to market.")))));
+}
+
+// ─────────────────────────────────────────────────────────
+// Beyond work — fitness
+// ─────────────────────────────────────────────────────────
+const RIDES = [{
+  route: 'London → Paris',
+  dist: '470km'
+}, {
+  route: 'London → Amsterdam',
+  dist: '450km'
+}, {
+  route: 'Bath → Manchester',
+  dist: '350km'
+}];
+function Beyond() {
+  return /*#__PURE__*/React.createElement("section", {
+    id: "beyond",
+    className: "beyond-section",
+    "data-screen-label": "07 Beyond work"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+    className: "eyebrow"
+  }, "Beyond work"), /*#__PURE__*/React.createElement("h2", {
+    className: "ttl"
+  }, "A bit of a ", /*#__PURE__*/React.createElement("em", null, "fitness freak.")))), /*#__PURE__*/React.createElement("div", {
+    className: "body about-lede"
+  }, /*#__PURE__*/React.createElement("p", null, "Former top junior tennis player \u2014 five-time Welsh champion \u2014 I represented Wales Students at rugby sevens and played to professional standard for Richmond RFC. These days I get my fix on long-distance charity cycle rides.")), /*#__PURE__*/React.createElement("div", {
+    className: "three-cards",
+    style: {
+      marginTop: 48
+    }
+  }, RIDES.map((r, i) => /*#__PURE__*/React.createElement("article", {
+    key: i
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kicker"
+  }, "Charity ride"), /*#__PURE__*/React.createElement("h3", {
+    className: "subhead"
+  }, r.route), /*#__PURE__*/React.createElement("p", {
+    className: "ride-dist"
+  }, r.dist))))));
 }
 
 // ─────────────────────────────────────────────────────────
@@ -494,7 +492,7 @@ function Contact() {
   return /*#__PURE__*/React.createElement("section", {
     id: "contact",
     className: "contact-section",
-    "data-screen-label": "07 Contact"
+    "data-screen-label": "08 Contact"
   }, /*#__PURE__*/React.createElement("div", {
     className: "wrap"
   }, /*#__PURE__*/React.createElement("div", {
@@ -503,16 +501,24 @@ function Contact() {
     className: "eyebrow"
   }, "Get in touch"), /*#__PURE__*/React.createElement("h2", {
     className: "ttl"
-  }, "Lorem ipsum, ", /*#__PURE__*/React.createElement("em", null, "dolor,"), /*#__PURE__*/React.createElement("br", null), "sit amet."))), /*#__PURE__*/React.createElement("div", {
+  }, "Let's put ", /*#__PURE__*/React.createElement("em", null, "AI to work.")))), /*#__PURE__*/React.createElement("div", {
     className: "contact-grid"
   }, /*#__PURE__*/React.createElement("p", {
     className: "lede",
     style: {
       maxWidth: 720
     }
-  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."), /*#__PURE__*/React.createElement("div", {
+  }, "Interested in how AI can help your business? Book a call. Otherwise, find me on YouTube and LinkedIn \u2014 or drop me a line."), /*#__PURE__*/React.createElement("div", {
     className: "contact-links"
   }, /*#__PURE__*/React.createElement("a", {
+    href: BOOK_URL,
+    target: "_blank",
+    rel: "noreferrer"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "kicker"
+  }, "Book a call"), /*#__PURE__*/React.createElement("div", {
+    className: "contact-value"
+  }, "Find a time")), /*#__PURE__*/React.createElement("a", {
     href: "mailto:me@harrymrdavies.com",
     rel: "me"
   }, /*#__PURE__*/React.createElement("div", {
@@ -520,52 +526,42 @@ function Contact() {
   }, "Email"), /*#__PURE__*/React.createElement("div", {
     className: "contact-value"
   }, "me@harrymrdavies.com")), /*#__PURE__*/React.createElement("a", {
-    href: "https://www.linkedin.com/in/harrymrdavies/",
+    href: LINKEDIN_URL,
     target: "_blank",
     rel: "me noreferrer"
   }, /*#__PURE__*/React.createElement("div", {
     className: "kicker"
   }, "LinkedIn"), /*#__PURE__*/React.createElement("div", {
     className: "contact-value"
-  }, "/in/harrymrdavies")), /*#__PURE__*/React.createElement("a", {
-    href: "https://x.com/harrymrdavies",
+  }, "21,000+ followers")), /*#__PURE__*/React.createElement("a", {
+    href: YOUTUBE_URL,
     target: "_blank",
     rel: "me noreferrer"
   }, /*#__PURE__*/React.createElement("div", {
     className: "kicker"
-  }, "Twitter"), /*#__PURE__*/React.createElement("div", {
-    className: "contact-value"
-  }, "@harrymrdavies")), /*#__PURE__*/React.createElement("a", {
-    href: "https://github.com/harrymrdavies",
-    target: "_blank",
-    rel: "me noreferrer"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "kicker"
-  }, "GitHub"), /*#__PURE__*/React.createElement("div", {
+  }, "YouTube"), /*#__PURE__*/React.createElement("div", {
     className: "contact-value"
   }, "@harrymrdavies"))))), /*#__PURE__*/React.createElement("div", {
     className: "wrap"
   }, /*#__PURE__*/React.createElement("footer", {
     className: "colophon"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Harry Davies"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit."), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Elsewhere"), /*#__PURE__*/React.createElement("a", {
-    href: "https://www.linkedin.com/in/harrymrdavies/",
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Harry Davies"), "Exited founder, investor and advisor. Helping businesses put AI to work."), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Elsewhere"), /*#__PURE__*/React.createElement("a", {
+    href: LINKEDIN_URL,
     rel: "me"
   }, "LinkedIn"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("a", {
-    href: "https://x.com/harrymrdavies",
+    href: YOUTUBE_URL,
     rel: "me"
-  }, "X \xB7 @harrymrdavies"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("a", {
-    href: "https://github.com/harrymrdavies",
-    rel: "me"
-  }, "GitHub")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "\xA9 2026"), "Harry M. R. Davies.", /*#__PURE__*/React.createElement("br", null), "All rights reserved."))));
+  }, "YouTube \xB7 @harrymrdavies")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "\xA9 2026"), "Harry M. R. Davies.", /*#__PURE__*/React.createElement("br", null), "All rights reserved."))));
 }
 Object.assign(window, {
   Runner,
   Hero,
   About,
-  Career,
-  Projects,
   Services,
+  Projects,
+  Career,
   Writing,
+  Beyond,
   Contact
 });
 
@@ -578,6 +574,6 @@ function App() {
     href: "#main-content"
   }, "Skip to main content"), /*#__PURE__*/React.createElement(Runner, null), /*#__PURE__*/React.createElement("main", {
     id: "main-content"
-  }, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Career, null), /*#__PURE__*/React.createElement(Projects, null), /*#__PURE__*/React.createElement(Services, null), /*#__PURE__*/React.createElement(Writing, null), /*#__PURE__*/React.createElement(Contact, null)));
+  }, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(About, null), /*#__PURE__*/React.createElement(Services, null), /*#__PURE__*/React.createElement(Projects, null), /*#__PURE__*/React.createElement(Career, null), /*#__PURE__*/React.createElement(Writing, null), /*#__PURE__*/React.createElement(Beyond, null), /*#__PURE__*/React.createElement(Contact, null)));
 }
 ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(App, null));

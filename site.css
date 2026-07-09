@@ -185,6 +185,12 @@ section { padding: clamp(56px, 8vw, 112px) 0; border-top: 1px solid var(--rule);
 .dd-callout .link-arrow { color: #fff; }
 .dd-callout .link-arrow:hover { color: var(--accent-tint); }
 
+/* ── Content & speaking ──────────────────────────────────── */
+.youtube-feature { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 22px; padding: clamp(28px, 4vw, 44px); }
+.youtube-feature p { color: var(--muted); margin: 12px 0 24px; max-width: 46ch; }
+.youtube-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.ride-dist { font-family: var(--font-serif); font-size: 32px; color: var(--accent); margin: 4px 0 0; }
+
 /* ── Writing ─────────────────────────────────────────────── */
 .writing-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 56px; }
 .article-link { display: block; text-decoration: none; padding: 28px 0; }

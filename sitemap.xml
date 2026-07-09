@@ -3,37 +3,13 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://harrymrdavies.com/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://harrymrdavies.com/assets/og-image.png</image:loc>
-      <image:title>Harry M. R. Davies</image:title>
-      <image:caption>Harry M. R. Davies — portfolio cover (placeholder).</image:caption>
+      <image:title>Harry M. R. Davies — Helping businesses put AI to work</image:title>
+      <image:caption>Harry M. R. Davies — exited founder, investor and advisor.</image:caption>
     </image:image>
-  </url>
-  <url>
-    <loc>https://harrymrdavies.com/writing/</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://harrymrdavies.com/writing/lorem-ipsum-dolor/</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://harrymrdavies.com/writing/consectetur-adipiscing/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://harrymrdavies.com/writing/sed-do-eiusmod/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
   </url>
 </urlset>
